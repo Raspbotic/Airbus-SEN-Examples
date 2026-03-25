@@ -1,0 +1,38 @@
+# simulation_interface.yaml
+
+# 1. Include base configurations (e.g., for the interactive shell/explorer)
+include:
+  - ../../../SEN/sen-main/examples/config/base/shell.yaml 
+
+# 2. Define the logical buses used in the Python code
+buses:
+  - name: tactical.bus
+
+# 3. Load the Adapter Components
+load:
+  # PCS Node: Bridges Flight Sim -> SEN
+  - name: py
+    alias: pcs_adapter
+    group: 1
+    freqHz: 30
+    module: pcs_node
+    imports:
+      - simulation_interface_package # The name of your compiled DLL/SO
+    
+  # SE Node: Bridges SEN <-> Radar Sim
+  - name: py
+    alias: se_adapter
+    group: 1
+    freqHz: 30
+    module: se_node
+    imports:
+      - simulation_interface_package
+ 
+  # Bus Monitor Node: Monitors the SEN bus
+  - name: py
+    alias: bus_monitor
+    group: 1
+    freqHz: 10
+    module: monitor_node
+    imports:
+      - simulation_interface_package # The name of your compiled DLL/SO

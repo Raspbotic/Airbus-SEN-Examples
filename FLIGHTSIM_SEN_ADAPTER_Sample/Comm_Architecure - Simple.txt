@@ -1,0 +1,15 @@
+
+  
+  [ PCS_NODE.PY ]             [ SE_NODE.PY ]
+        ^                           ^
+        | TX:Direct Assignment		| TX:Direct Assignment
+		| RX:SEN SQL Query			| RX:SEN SQL Query
+        v                           v
+  +---------------------------------------+
+  |             SEN TACTICAL.BUS          |
+  +---------------------------------------+
+        ^                           
+        | 		
+		| RX:SEN SQL Query			
+        v                           
+	[ MONITOR_NODE.PY ]

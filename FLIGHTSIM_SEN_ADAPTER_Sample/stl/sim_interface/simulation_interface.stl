@@ -1,0 +1,21 @@
+package sim_interface;
+
+class Ownship {
+    var ownshipId : string [writable, confirmed]; 
+    var lat       : f64 [writable];
+    var lon       : f64 [writable];
+    var altM      : f64 [writable]; 
+    var hdg       : f64 [writable];
+    var pitch     : f64 [writable];
+    var roll      : f64 [writable];
+
+    fn updateState(id: string, la: f64, lo: f64, al: f64, h: f64, p: f64, r: f64);
+}
+
+class RadarReport {
+    var emitterId  : string [writable, confirmed];
+    var rangeM     : f64 [writable];               
+    var isDetected : bool [writable];
+
+    fn setDetection(id: string, rng: f64, det: bool);
+}
