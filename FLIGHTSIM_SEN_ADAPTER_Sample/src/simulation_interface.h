@@ -1,3 +1,6 @@
+// Copyright 2026 Kapbotics
+// SPDX-License-Identifier: Apache-2.0
+
 #pragma once
 #include <string>
 #include "stl/sim_interface/simulation_interface.stl.h"
@@ -11,10 +14,6 @@ namespace sim_interface {
 
             OwnshipImpl(const std::string& name, const sen::VarMap& args) : OwnshipBase(name, args) {}
         ~OwnshipImpl() override = default;
-
-        void update(sen::kernel::RunApi& runApi) override {
-            std::ignore = runApi;
-        }
 
     protected:
         // Matches line 133 of the generated file exactly
@@ -35,10 +34,6 @@ namespace sim_interface {
 
             RadarReportImpl(const std::string& name, const sen::VarMap& args) : RadarReportBase(name, args) {}
         ~RadarReportImpl() override = default;
-
-        void update(sen::kernel::RunApi& runApi) override {
-            std::ignore = runApi;
-        }
 
     protected:
         // Matches line 462 of the generated file exactly

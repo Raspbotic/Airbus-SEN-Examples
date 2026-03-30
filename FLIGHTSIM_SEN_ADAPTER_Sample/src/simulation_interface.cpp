@@ -1,3 +1,6 @@
+// Copyright 2026 Kapbotics
+// SPDX-License-Identifier: Apache-2.0
+
 #include "simulation_interface.h"
 
 // The namespace MUST match your CMake target name!
