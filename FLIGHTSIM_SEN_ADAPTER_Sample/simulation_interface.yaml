@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 include:
+# This requires an installed version of SEN for Windows
   - ../../../SEN/sen-main/examples/config/base/shell.yaml 
 
 buses:
